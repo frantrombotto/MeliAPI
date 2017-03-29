@@ -10,6 +10,7 @@ import groovy.json.JsonSlurper;
 class APIControllerService {
 	def connection
 	JsonSlurper json
+	String url = 'http://j5ajvgmc.burrow.io/PublicationManagerDbAPI'
 	
 	def conectarGET(URL url){
 		connection = (HttpURLConnection) url.openConnection()
@@ -35,13 +36,13 @@ class APIControllerService {
 	}
 	
 	ArrayList obtenerPublicaciones(){
-		conectarGET(new URL('http://pubs.pagekite.me/PublicationManagerDbAPI/publicaciones/'))
+		conectarGET(new URL(url + '/publicaciones/'))
 		ArrayList publicaciones = (ArrayList)json.parse(connection.getInputStream())
 		return publicaciones
 	}
 	
 	Map obtenerPublicacionesUsuario(String idUsuario){
-		conectarGET(new URL('http://pubs.pagekite.me/PublicationManagerDbAPI/usuarios/'+idUsuario))
+		conectarGET(new URL(url + '/usuarios/'+idUsuario))
 //		conectarGET(new URL('http://localhost:1090/usuario/'+idUsuario+"/publicaciones"))
 //		Map publicaciones = (Map)json.parse(connection.getInputStream())
 		Map usuario = (Map)json.parse(connection.getInputStream())
@@ -64,7 +65,7 @@ class APIControllerService {
 	}
 	
 	Map eliminarPublicacion(String idPublicacion){
-		conectarPUT(new URL('http://pubs.pagekite.me/PublicationManagerDbAPI/publicaciones/'+ idPublicacion+'?activo=n'))
+		conectarPUT(new URL(url+ '/publicaciones/'+ idPublicacion+'?activo=n'))
 		Map publicacionEliminada = (Map)json.parse(connection.getInputStream())
 		return publicacionEliminada
 	}
