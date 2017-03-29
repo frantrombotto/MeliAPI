@@ -15,8 +15,13 @@ class APIController {
 	//		@RestApiParam(name="id", type="long", paramType = RestApiParamType.PATH, description = "The book id")
 	//	])
 
-	ArrayList mostrarPublicaciones(){
+	def mostrarPublicaciones(){
 		def publicaciones = APIControllerService.obtenerPublicaciones()
+		render publicaciones
+	}
+	
+	def mostrarPublicacion(){
+		def publicaciones = APIControllerService.obtenerPublicacion(params.idPublicacion)
 		render publicaciones
 	}
 
@@ -24,14 +29,7 @@ class APIController {
 		def publicacionesUsuario = APIControllerService.obtenerPublicacionesUsuario(params.idUsuario)
 		render publicacionesUsuario
 	}
-	
-	def validarUsuario(){
-		ArrayList listaUsuarios = APIControllerService.obtenerUsuarios()
-		for (usuario in listaUsuarios) {
-			
-		}
-	}
-	
+
 	def eliminarPublicacion(){
 		render APIControllerService.eliminarPublicacion(params.idPublicacion)
 	}

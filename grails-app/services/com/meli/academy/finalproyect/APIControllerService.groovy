@@ -28,12 +28,6 @@ class APIControllerService {
 				json = new JsonSlurper()
 	}
 	
-	ArrayList obtenerProducto(String id){
-		conectarGET(new URL('https://api.mercadolibre.com/categories/'+id))
-		ArrayList mapa = (Map) json.parse(connection.getInputStream())
-		ArrayList listaCategorias = mapa.get('children_categories')
-		return listaCategorias
-	}
 	
 	ArrayList obtenerPublicaciones(){
 		conectarGET(new URL(url + '/publicaciones/'))
@@ -41,27 +35,17 @@ class APIControllerService {
 		return publicaciones
 	}
 	
-	Map obtenerPublicacionesUsuario(String idUsuario){
-		conectarGET(new URL(url + '/usuarios/'+idUsuario))
-//		conectarGET(new URL('http://localhost:1090/usuario/'+idUsuario+"/publicaciones"))
-//		Map publicaciones = (Map)json.parse(connection.getInputStream())
-		Map usuario = (Map)json.parse(connection.getInputStream())
-		ArrayList publicacionesUsuario = (ArrayList) usuario.publicaciones
-		println publicacionesUsuario
-		for (publicacion in publicacionesUsuario) {
-			if(publicacion.activo == "n"){
-				publicacionesUsuario.remove(publicacion)
-			}
-		}
-		println publicacionesUsuario
-		usuario.publicaciones = publicacionesUsuario
-		return usuario
+	Map obtenerPublicacion(String idPublicacion){
+		conectarGET(new URL(url + '/publicaciones/'+idPublicacion))
+		Map publicaciones = (Map)json.parse(connection.getInputStream())
+		return publicaciones
 	}
 	
-	ArrayList obtenerUsuarios(){
-		conectarGET(new URL('http://localhost:1090/usuarios'))
-		ArrayList usuarios = (ArrayList)json.parse(connection.getInputStream())
-		return usuarios
+	ArrayList obtenerPublicacionesUsuario(String idUsuario){
+		conectarGET(new URL(url + '/usuarios/'+idUsuario))
+		ArrayList publicacion = (ArrayList)json.parse(connection.getInputStream())
+		publicacion.removeAll { it.activo.equalsIgnoreCase('n')}
+		return publicacion
 	}
 	
 	Map eliminarPublicacion(String idPublicacion){
