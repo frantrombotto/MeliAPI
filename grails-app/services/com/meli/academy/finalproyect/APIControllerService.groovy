@@ -31,14 +31,15 @@ class APIControllerService {
 	
 	ArrayList obtenerPublicaciones(){
 		conectarGET(new URL(url + '/publicaciones/'))
-		ArrayList publicaciones = (ArrayList)json.parse(connection.getInputStream())
+		ArrayList publicaciones = (ArrayList) json.parse(connection.getInputStream())
+		publicaciones.removeAll { it.activo.equalsIgnoreCase('n') }
 		return publicaciones
 	}
 	
 	Map obtenerPublicacion(String idPublicacion){
 		conectarGET(new URL(url + '/publicaciones/'+idPublicacion))
-		Map publicaciones = (Map)json.parse(connection.getInputStream())
-		return publicaciones
+		Map publicacion = (Map)json.parse(connection.getInputStream())
+		return publicacion
 	}
 	
 	ArrayList obtenerPublicacionesUsuario(String idUsuario){

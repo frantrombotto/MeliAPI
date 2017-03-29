@@ -9,9 +9,8 @@ class UrlMappings {
 
         "/"(view:"/index")
         "500"(view:'/error')
-		"/publicaciones/usuario/$idUsuario"(controller:"API",action:"mostrarPublicacionesUsuario")
-		"/publicacion/$idPublicacion/delete"(controller:"API", action:"eliminarPublicacion")
-		"/publicacion/$idPublicacion"(controller:"API", action:"mostrarPublicacion")
+		"/usuarios/$idUsuario/publicaciones"(controller:"API",action:"mostrarPublicacionesUsuario")
+		"/publicaciones/$idPublicacion"(controller:"API", action:"mostrarPublicacion")
 		"/publicaciones/"(controller:"API", action:"mostrarPublicaciones")
 	}
 }
