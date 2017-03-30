@@ -14,5 +14,6 @@ class UrlMappings {
 		"/publicaciones"(controller:"API", action:"mostrarPublicacionesUsuario")
 		"/trends/top-categories"(controller:"Tendencias", action:"rankingCategorias", param:'top')
 		"/trends/top-users"(controller:"Tendencias", action:"rankingUsuarios", param:'top')
+		"/trends/top-quality"(controller:"Tendencias", action:"rankingPublicacionesCalidad", param:'top')
 	}
 }

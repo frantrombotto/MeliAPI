@@ -77,6 +77,17 @@ class TendenciasControllerService {
 		}
 		return usuariosJson.subList(0, top)
 	}
+	
+	def obtenerPublicacionesCalidad(int top){
+		conectarGET(new URL(url + '/publicaciones/'))
+		ArrayList publicaciones = (ArrayList) json.parse(connection.getInputStream())
+		publicaciones=publicaciones.sort{ -it.valoracion }
+
+		if(top==0 || top > publicaciones.size){
+			return publicaciones
+		}
+		return publicaciones.subList(0, top)
+	}
 
 	def buscarUsuario(int usuarioID){
 		conectarGET(new URL(urlMeli + '/users/'+usuarioID))
