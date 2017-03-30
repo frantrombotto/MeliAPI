@@ -38,8 +38,12 @@ class APIController {
 	}
 
 	def mostrarPublicacionesUsuario(){
+		if(request.getHeader("idUsuario") == null || request.getHeader("idUsuario").empty){
+			 render status:400
+		}
 		if(request.getMethod() == "GET"){
-			def publicacionesUsuario = APIControllerService.obtenerPublicacionesUsuario(params.idUsuario)
+//			println request.getHeader("idUsuario")
+			def publicacionesUsuario = APIControllerService.obtenerPublicacionesUsuario(request.getHeader("idUsuario"))
 			render publicacionesUsuario as JSON
 		}
 		else

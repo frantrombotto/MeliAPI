@@ -43,7 +43,9 @@ class APIControllerService {
 	}
 	
 	ArrayList obtenerPublicacionesUsuario(String idUsuario){
-		conectarGET(new URL(url + '/usuarios/'+idUsuario))
+		def usuario = idUsuario.replace('"','')
+		def url = url + '/usuarios/'+usuario
+		conectarGET(new URL(url))
 		ArrayList publicacion = (ArrayList)json.parse(connection.getInputStream())
 		publicacion.removeAll { it.activo.equalsIgnoreCase('n')}
 		return publicacion
@@ -54,10 +56,6 @@ class APIControllerService {
 		Map publicacionEliminada = (Map)json.parse(connection.getInputStream())
 		return publicacionEliminada
 	}
-	
-	def pruebaDelete(){
-		return conectarGET(new URL('http://fcab8324.ngrok.io/publicacion/1/delete'))
-		
-	}
+
 	
 }
