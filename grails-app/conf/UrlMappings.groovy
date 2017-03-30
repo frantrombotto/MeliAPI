@@ -12,5 +12,7 @@ class UrlMappings {
 //		"/usuarios/$idUsuario/publicaciones"(controller:"API",action:"mostrarPublicacionesUsuario")
 		"/publicaciones/$idPublicacion"(controller:"API", action:"mostrarPublicacion")
 		"/publicaciones"(controller:"API", action:"mostrarPublicacionesUsuario")
+		"/trends/top-categories"(controller:"Tendencias", action:"rankingCategorias", param:'top')
+		"/trends/top-users"(controller:"Tendencias", action:"rankingUsuarios", param:'top')
 	}
 }
