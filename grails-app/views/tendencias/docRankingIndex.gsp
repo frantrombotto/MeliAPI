@@ -91,9 +91,9 @@
 			<div id="controller-list" role="navigation">
 				<h2>Funcionalidades disponibles</h2>
 				<ul>
-				<li><g:link controller="Tendencias" action="rankingCategorias">Ranking de categorías más publicadas</g:link></li>
-				<li><g:link controller="Tendencias" action="rankingUsuarios">Ranking de usuarios que más publicaron</g:link></li>
-				<li><g:link controller="Tendencias" action="rankingPublicacionesCalidad">Ranking de las categorías de mayor calidad</g:link></li>
+				<li><g:link controller="Tendencias" action="docRankingCategorias">Ranking de categorías más publicadas</g:link></li>
+				<li><g:link controller="Tendencias" action="docRankingUsuarios">Ranking de usuarios que más publicaron</g:link></li>
+				<li><g:link controller="Tendencias" action="docRankingPublicacionesCalidad">Ranking de las categorías de mayor calidad</g:link></li>
 				</ul>
 			</div>
 		</div>

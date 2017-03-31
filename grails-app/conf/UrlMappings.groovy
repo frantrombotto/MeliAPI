@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller:"Tendencias", action:"docRankingIndex")
         "500"(view:'/error')
 //		"/usuarios/$idUsuario/publicaciones"(controller:"API",action:"mostrarPublicacionesUsuario")
 		"/publicaciones/$idPublicacion"(controller:"API", action:"mostrarPublicacion")

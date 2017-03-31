@@ -1,7 +1,7 @@
 	<html>
 <head>
 <meta charset="utf-8">
-<title>Category</title>
+<title>Doc Ranking Categorías</title>
 <meta name="description"
 	content="Retrieves the information about a MercadoLibres category.">
 <meta name="author" content="APIers">
@@ -22,6 +22,9 @@
 		</nav>
 		<div class="tabcontents">
 			<section tabid="options" style="display: block;">
+			<g:form action="rankingCategorias" controller="Tendencias" method="GET">
+				<button type="submit" >Json</button>
+			</g:form>
 				<dl class="glossary">
 					<dt class="collapsable">Allowed methods</dt>
 					<dd>
