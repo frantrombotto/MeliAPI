@@ -60,12 +60,15 @@ class TendenciasController {
 	}
 	
 	def docRankingCategorias(){
-		render
+		
 	}
 	def docRankingUsuarios(){
-		render
+	
 	}
 	def docRankingPublicacionesCalidad(){
-		render
+	
+	}
+	def docRankingIndex(){
+	
 	}
 }

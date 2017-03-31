@@ -1,0 +1,195 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+	font-size: 13px;
+	color: #333;
+	line-height: 20px;
+	margin: 10px;
+	max-width: 100%;
+	min-width: 320px;
+	padding: 0px;
+}
+
+footer {
+	max-width: 1200px;
+	margin: 20px auto;
+	text-align: right;
+}
+
+.content {
+	max-width: 1200px;
+	margin: 20px auto;
+}
+
+.content pre {
+	margin: 0;
+}
+
+dl.glossary {
+	margin: 0;
+}
+
+dl.glossary dt, dl.glossary dd {
+	line-height: 20px;
+}
+
+dl.glossary dt {
+	color: #999;
+	float: left;
+	margin-right: 10px;
+}
+dl.glossary dt:after {
+	content: ":";
+}
+
+dl.glossary dd {
+	color: #333;
+	margin-left: 0;
+}
+
+dl.glossary dd dl {
+	margin: 0 0 5px 50px;
+	padding: 0 0 5px 10px;
+	border-left: solid 3px #f4f4f4;
+	border-bottom: solid 1px #f4f4f4;
+	border-radius: 0 0 0 10px;
+	clear: both;
+}
+
+dl.glossary dt.attribute, dl.glossary dt.value, dl.glossary dt.error {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+dl.glossary dt.attribute {
+	color: #007;
+}
+dl.glossary dt.value {
+	color: #090;
+}
+dl.glossary dt.error {
+	color: #c00;
+}
+
+dl.glossary dt.attribute.mandatory {
+	font-weight: bold;
+}
+
+/* Tabs */
+
+.tabcontents {
+	border: solid 1px #ccc;
+	padding: 15px;
+	box-shadow: 1px 1px 2px #CCC;
+	background-color: #fafafa;
+	border-radius: 5px;
+	z-index: 0;
+}
+
+nav.tabs {
+	padding-left: 10px;
+}
+
+nav.tabs ul {
+	margin: 0;
+	padding: 0;
+	list-style: none outside none;
+}
+nav.tabs ul li {
+	display: inline;
+	margin: 0;
+}
+nav.tabs ul li + li {
+	margin-left: 5px;
+}
+
+nav.tabs ul li a {
+	outline: none;
+	display: inline-block;
+	padding: 5px 10px;
+	border: solid 1px #ccc;
+	border-radius: 5px 5px 0 0;
+	background-color: #efefef;
+	text-decoration: none;
+	color: #999;
+	z-index: 1;
+	margin-bottom: -1px;
+	box-shadow: 0px 10px 15px -5px #fff inset;
+}
+nav.tabs ul li a:hover {
+	color: #333;
+}
+
+nav.tabs ul li a.active {
+	background-color: #fafafa;
+	border-bottom: none;
+	margin-bottom: -2px;
+	padding-bottom: 6px;
+	color: #333;
+	box-shadow: 0px 10px 15px -5px #ddd inset;
+}
+
+/* Collapsible */
+
+.collapsible {
+    display: inline;
+}
+
+.collapser, .expander {
+    cursor: pointer;
+}
+
+.collapser:after {
+    content: "- ";
+}
+
+.expander:after {
+    content: "...";
+}
+
+.expand-controls {
+	float: right;
+	margin: 0;
+}
+
+.expand-controls a {
+	padding: 0 10px;
+	cursor: pointer;
+	border-radius: 3px;
+	border: 1px solid #79a8c7;
+	background-color: #c0daec;
+	color: #476274;
+	line-height: 20px;
+	display: inline-block;
+	box-shadow: 0px 10px 15px -5px #fff inset;
+}
+.expand-controls a:hover {
+	background-color: #d1ebfd;
+}
+
+/* GENERIC */
+
+.hidden {
+	display: none;
+}
+
+/* Collapsable */
+
+.collapsable {
+	cursor: pointer;
+}
+
+.collapsable:before {
+	font-family: "Andale Mono", AndaleMono, monospace;
+	font-weight: bold;
+	content: "-";
+}
+.collapsable.collapsed:before {
+	content: "+";
+}
+.collapsable:hover {
+	color: blue;
+}
