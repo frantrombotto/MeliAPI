@@ -38,13 +38,16 @@ class APIController {
 	}
 
 	def mostrarPublicacionesUsuario(){
-		if(request.getHeader("idUsuario") == null || request.getHeader("idUsuario").empty){
-			 render status:400
-		}
+		
 		if(request.getMethod() == "GET"){
-//			println request.getHeader("idUsuario")
-			def publicacionesUsuario = APIControllerService.obtenerPublicacionesUsuario(request.getHeader("idUsuario"))
-			render publicacionesUsuario as JSON
+			if(request.getHeader("idUsuario") == null || request.getHeader("idUsuario").empty){
+				render status:400
+			}
+			else{				
+//				println request.getHeader("idUsuario")
+				def publicacionesUsuario = APIControllerService.obtenerPublicacionesUsuario(request.getHeader("idUsuario"))
+				render publicacionesUsuario as JSON
+			}
 		}
 		else
 			render status:400

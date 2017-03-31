@@ -58,4 +58,14 @@ class TendenciasController {
 		else
 			render status:400
 	}
+	
+	def docRankingCategorias(){
+		render
+	}
+	def docRankingUsuarios(){
+		render
+	}
+	def docRankingPublicacionesCalidad(){
+		render
+	}
 }
