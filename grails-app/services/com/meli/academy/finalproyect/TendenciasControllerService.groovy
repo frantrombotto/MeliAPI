@@ -23,7 +23,7 @@ class TendenciasControllerService {
 		json = new JsonSlurper()
 	}
 
-	ArrayList obtenerRankingCategorias(int top){
+	def obtenerRankingCategorias(int top){
 		conectarGET(new URL(url + '/publicaciones/'))
 		ArrayList publicaciones = (ArrayList) json.parse(connection.getInputStream())
 		Map contadorPublicaciones =[:]
