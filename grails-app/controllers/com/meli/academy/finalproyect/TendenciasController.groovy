@@ -12,7 +12,7 @@ class TendenciasController {
 		def rankingCategorias
 		
 		if(request.getMethod() == "GET"){
-			if(!params['top']==null){
+			if(params['top']!=null){
 				def topValue=params['top']
 				rankingCategorias = tendenciasControllerService.obtenerRankingCategorias(topValue as Integer)
 			}
@@ -29,7 +29,7 @@ class TendenciasController {
 		def rankingUsuarios
 		
 		if(request.getMethod() == "GET"){
-			if(!params['top']==null){
+			if(params['top']!=null){
 				def topValue=params['top']
 				rankingUsuarios = tendenciasControllerService.obtenerRankingUsuarios(topValue as Integer)
 			}
@@ -45,8 +45,9 @@ class TendenciasController {
 		def rankingPublicaciones
 
 		if(request.getMethod() == "GET"){
-			if(!params['top']==null){
+			if(params['top']!=null){
 				def topValue=params['top']
+				println topValue
 				rankingPublicaciones = tendenciasControllerService.obtenerPublicacionesCalidad(topValue as Integer)
 			}
 			else{

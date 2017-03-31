@@ -45,7 +45,7 @@ class TendenciasControllerService {
 			categorias.add(categoria)
 		}
 
-		if(top==0 || top > publicaciones.size){
+		if(top==0 || top > categorias.size){
 			return categorias
 		}
 		return categorias.subList(0, top)
@@ -77,7 +77,7 @@ class TendenciasControllerService {
 		}
 		return usuariosJson.subList(0, top)
 	}
-	
+
 	def obtenerPublicacionesCalidad(int top){
 		conectarGET(new URL(url + '/publicaciones/'))
 		ArrayList publicaciones = (ArrayList) json.parse(connection.getInputStream())
